@@ -9,3 +9,5 @@ function ExampleComponent() {
     </div>
   )
 }
+
+const root = ReactDOM.createRoot(document.querySelector("#app"))
