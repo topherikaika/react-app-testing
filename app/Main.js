@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header.js";
 import HomeGuest from "./components/HomeGuest.js";
 import Footer from "./components/Footer.js";
-function ExampleComponent() {
+function Main() {
   return (
     <>
       <Header />
@@ -15,7 +15,7 @@ function ExampleComponent() {
 }
 
 const root = ReactDOM.createRoot(document.querySelector("#app"));
-root.render(<ExampleComponent />);
+root.render(<Main />);
 
 if (module.hot) {
   module.hot.except();
