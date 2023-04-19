@@ -1,5 +1,5 @@
-import React from "react"
-import React-DOM from "react-dom/client"
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 function ExampleComponent() {
   return (
@@ -7,7 +7,7 @@ function ExampleComponent() {
       <h1>This App</h1>
       <p>Created today</p>
     </div>
-  )
+  );
 }
 
-const root = ReactDOM.createRoot(document.querySelector("#app"))
+const root = ReactDOM.createRoot(document.querySelector("#app"));
