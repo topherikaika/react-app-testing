@@ -37,4 +37,4 @@ function HomeGuest() {
     </div>
   );
 }
-export default HomeGuest.js;
+export default HomeGuest;
