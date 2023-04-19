@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+//Components imports:
 import Header from "./components/Header.js";
+import HomeGuest from "./components/HomeGuest.js";
 
 function ExampleComponent() {
   return (
     <>
-      <Header />x
+      <Header />
+      <HomeGuest />
       <footer className="border-top text-center small text-muted py-3">
         <p>
           <a href="/" className="mx-1">
