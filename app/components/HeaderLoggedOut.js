@@ -7,7 +7,7 @@ function HeaderLoggedOut() {
 
   async function handleSubmit() {
     try {
-      const response = await Axios.post("http://localhost:8080/login", { username, passowrd });
+      const response = await Axios.post("http://localhost:8080/login", { username, password });
       console.log(response.data);
     } catch (e) {
       console.log("There was a problem");
