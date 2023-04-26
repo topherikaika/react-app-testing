@@ -5,17 +5,17 @@ function Footer() {
   return (
     <footer class="border-top text-center small text-muted py-3">
       <p>
-        <a href="/" class="mx-1">
+        <Link to="/" class="mx-1">
           Home
-        </a>{" "}
+        </Link>{" "}
         |{" "}
-        <a class="mx-1" href="/about-us">
+        <Link class="mx-1" to="/about-us">
           About Us
-        </a>{" "}
+        </Link>{" "}
         |{" "}
-        <a class="mx-1" href="/terms">
+        <Link class="mx-1" to="/terms">
           Terms
-        </a>
+        </Link>
       </p>
       <p class="m-0">
         Copyright &copy; {new Date().getFullYear()}
