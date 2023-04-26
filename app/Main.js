@@ -13,7 +13,10 @@ function Main() {
   return (
     <BrowserRouter>
       <Header />
-      <HomeGuest />
+      <Routes>
+        <Route />
+        <Route />
+      </Routes>
       <Footer />
     </BrowserRouter>
   );
