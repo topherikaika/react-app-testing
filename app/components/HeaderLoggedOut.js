@@ -5,14 +5,18 @@ function HeaderLoggedOut() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
-  async function handleSubmit() {
+  async function handleSubmit(e) {
+    e.preventDefault();
     try {
       const response = await Axios.post("http://localhost:8080/login", { username, password });
-      console.log(response.data);
+      if (response.data) {
+        console.log(response.data);
+      } else {
+        console.log("Incorrect username/password");
+      }
     } catch (e) {
       console.log("There was a problem");
     }
-    e.preventDefault();
   }
   return (
     <form onSubmit={handleSubmit} className="mb-0 pt-2 pt-md-0">
