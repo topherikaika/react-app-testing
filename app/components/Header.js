@@ -14,7 +14,7 @@ function Header() {
             ComplexApp{" "}
           </Link>
         </h4>
-        {loggedIn ? <HeaderLoggedIn /> : <HeaderLoggedOut setLoggedIn={setLoggedIn} />}
+        {loggedIn ? <HeaderLoggedIn setLoggedIn={setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={setLoggedIn} />}
       </div>
     </header>
   );
