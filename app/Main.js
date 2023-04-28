@@ -12,7 +12,7 @@ import About from "./components/about";
 import Terms from "./components/Terms.js";
 import Home from "./components/Home.js";
 import CreatePost from "./components/CreatePost.js";
-
+import ViewSinglePost from "./components/ViewSinglePost.js";
 function Main() {
   const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("complexAppToken")));
   return (
@@ -20,6 +20,7 @@ function Main() {
       <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
         <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
+        <Route path="/post/:id" element={<ViewSinglePost />} />
         <Route path="/create-post" element={<CreatePost />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/terms" element={<Terms />} />
