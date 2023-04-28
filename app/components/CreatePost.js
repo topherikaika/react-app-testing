@@ -13,7 +13,7 @@ function CreatePost() {
     try {
       const response = await Axios.post("/create-post", { title, body, token: localStorage.getItem("complexAppToken") });
       //Redirect to new post url
-      navigate("/post/abc123");
+      navigate(`/post/${response.data}`);
       console.log("New post was created");
     } catch (e) {
       console.log("There was a problem");
