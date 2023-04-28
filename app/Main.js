@@ -17,7 +17,7 @@ import FlashMessages from "./components/FlashMessages.js";
 
 function Main() {
   const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("complexAppToken")));
-  const [flashMessages, setFlashMessages] = useState();
+  const [flashMessages, setFlashMessages] = useState([]);
 
   function addFlashMessage(msg) {
     setFlashMessages(prev => prev.concat(msg));
