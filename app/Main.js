@@ -16,7 +16,7 @@ function Main() {
     <BrowserRouter>
       <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/terms" element={<Terms />} />
       </Routes>
