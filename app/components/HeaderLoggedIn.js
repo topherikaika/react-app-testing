@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 function HeaderLoggedIn(props) {
   function handleLogout() {
-    props.loggedIn(false);
+    props.setLoggedIn(false);
     localStorage.removeItem("complexAppToken");
     localStorage.removeItem("complexAppUsername");
     localStorage.removeItem("complexAppAvatar");
