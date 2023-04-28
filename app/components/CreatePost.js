@@ -1,10 +1,20 @@
 import React, { useEffect } from "react";
-import Page from "./Page.js";
+import Page from "./Page";
+import Axios from "axios";
 
 function CreatePost() {
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      await Axios.post("/create-post", { title: "Test title", body: "Test content", token: localStorage.getItem("complexAppToken") });
+      console.log("New post was created");
+    } catch (e) {
+      console.log("There was a problem");
+    }
+  }
   return (
     <Page title="Create New Post">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="post-title" className="text-muted mb-1">
             <small>Title</small>
