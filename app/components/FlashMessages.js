@@ -1,7 +1,5 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from "react";
 
 function FlashMessages() {
-  return (
-    <div>Test</div>
-  )
-<div>Test</div>
+  return <div>Test</div>;
+}
