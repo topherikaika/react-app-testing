@@ -29,7 +29,7 @@ function Main() {
       <Routes>
         <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
         <Route path="/post/:id" element={<ViewSinglePost />} />
-        <Route path="/create-post" element={<CreatePost />} />
+        <Route path="/create-post" element={<CreatePost addFlashMessage={addFlashMessage} />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/terms" element={<Terms />} />
       </Routes>
