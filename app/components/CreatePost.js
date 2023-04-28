@@ -11,7 +11,7 @@ function CreatePost() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      await Axios.post("/create-post", { title, body, token: localStorage.getItem("complexAppToken") });
+      const response = await Axios.post("/create-post", { title, body, token: localStorage.getItem("complexAppToken") });
       //Redirect to new post url
       navigate("/post/abc123");
       console.log("New post was created");
