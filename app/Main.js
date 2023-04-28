@@ -19,6 +19,7 @@ function Main() {
   const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("complexAppToken")));
   return (
     <BrowserRouter>
+      <FlashMessages />
       <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
         <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
