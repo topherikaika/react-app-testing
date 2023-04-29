@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Axios from "axios";
 Axios.defaults.baseURL = "http://localhost:8080";
+import StateContext from "./StateContext.js";
+import DispatchContext from "./DispatchContext.js";
 
 //Components imports:
 import Header from "./components/Header.js";
@@ -14,7 +16,6 @@ import Home from "./components/Home.js";
 import CreatePost from "./components/CreatePost.js";
 import ViewSinglePost from "./components/ViewSinglePost.js";
 import FlashMessages from "./components/FlashMessages.js";
-import ExampleContext from "./ExampleContext.js";
 
 function Main() {
   const initialState = {
