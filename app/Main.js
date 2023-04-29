@@ -21,7 +21,12 @@ import FlashMessages from "./components/FlashMessages.js";
 function Main() {
   const initialState = {
     loggedIn: Boolean(localStorage.getItem("complexAppToken")),
-    flashMessages: []
+    flashMessages: [],
+    user: {
+      token: localStorage.getItem("complexppToken"),
+      username: localStorage.getItem("complexppUser"),
+      avatar: localStorage.getItem("complexppAvatar")
+    }
   };
 
   function ourReducer(draft, action) {
