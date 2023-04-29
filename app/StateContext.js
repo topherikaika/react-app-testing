@@ -2,4 +2,4 @@ import { createContext } from "react";
 
 const StateContext = createContext();
 
-export default ExampleContext;
+export default StateContext;
