@@ -33,6 +33,7 @@ function Main() {
     switch (action.type) {
       case "login":
         draft.loggedIn = true;
+        draft.user = action.data;
         break;
       case "logout":
         draft.loggedIn = false;
@@ -45,6 +46,14 @@ function Main() {
 
   const [state, dispatch] = useImmerReducer(ourReducer, initialState);
 
+  useEffect(() => {
+    if (state.loggedIn) {
+      localStorage.setItem("complexAppToken", state.user.token);
+      localStorage.setItem("complexAppUsername", state.user.username);
+      localStorage.setItem("complexAppAvatar", state.user.avatar);
+    } else {
+    }
+  }, [state.loggedIn]);
   return (
     <StateContext.Provider value={state}>
       <DispatchContext.Provider value={dispatch}>
