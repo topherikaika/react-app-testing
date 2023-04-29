@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { useImmerReducer } from "use-immer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -34,13 +34,13 @@ function Main() {
       case "login":
         draft.loggedIn = true;
         draft.user = action.data;
-        break;
+        return;
       case "logout":
         draft.loggedIn = false;
-        break;
+        return;
       case "flashMessage":
         draft.flashMessages.push(action.value);
-        break;
+        return;
     }
   }
 
