@@ -39,7 +39,7 @@ function Main() {
       <DispatchContext.Provider value={dispatch}>
         <BrowserRouter>
           <FlashMessages messages={state.flashMessages} />
-          <Header loggedIn={loggedIn} />
+          <Header />
           <Routes>
             <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
             <Route path="/post/:id" element={<ViewSinglePost />} />
