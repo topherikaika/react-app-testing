@@ -23,9 +23,9 @@ function Main() {
     loggedIn: Boolean(localStorage.getItem("complexAppToken")),
     flashMessages: [],
     user: {
-      token: localStorage.getItem("complexppToken"),
-      username: localStorage.getItem("complexppUser"),
-      avatar: localStorage.getItem("complexppAvatar")
+      token: localStorage.getItem("complexAppToken"),
+      username: localStorage.getItem("complexAppUsername"),
+      avatar: localStorage.getItem("complexAppAvatar")
     }
   };
 
