@@ -22,8 +22,9 @@ function Main() {
     loggedIn: Boolean(localStorage.getItem("complexAppToken")),
     flashMessages: []
   };
+
   function ourReducer(state, action) {
-    switch ((action, type)) {
+    switch (action.type) {
       case "login":
         return { loggedIn: true, flashMessages: state.flashMessages };
       case "logout":
@@ -32,6 +33,7 @@ function Main() {
         return { loggedIn: state.loggedIn, flashMessages: state.flashMessages.concat(action.value) };
     }
   }
+
   const [state, dispatch] = useReducer(ourReducer, initialState);
 
   return (
