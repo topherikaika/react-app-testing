@@ -17,7 +17,22 @@ import FlashMessages from "./components/FlashMessages.js";
 import ExampleContext from "./ExampleContext.js";
 
 function Main() {
-  const [state, dispatch] = useReducer();
+  const initialState = {
+    loggedIn: Boolean(localStorage.getItem("complexAppToken")),
+    flashMessages: []
+  };
+  function ourReducer(state, action) {
+    switch ((action, type)) {
+      case "login":
+        return { loggedIn: true, flashMessages: state.flashMessages };
+      case "logout":
+        return { loggedIn: false, flashMessages: state.flashMessages };
+      case "flashMessage":
+        return { loggedIn: state.loggedIn, flashMessages: state.flashMessages.concat(action.value) };
+    }
+  }
+  const [state, dispatch] = useReducer(ourReducer, initialState);
+
   const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("complexAppToken")));
   const [flashMessages, setFlashMessages] = useState([]);
 
