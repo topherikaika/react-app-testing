@@ -14,6 +14,7 @@ import Home from "./components/Home.js";
 import CreatePost from "./components/CreatePost.js";
 import ViewSinglePost from "./components/ViewSinglePost.js";
 import FlashMessages from "./components/FlashMessages.js";
+import ExampleContext from "./ExampleContext.js";
 
 function Main() {
   const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("complexAppToken")));
