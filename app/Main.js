@@ -38,7 +38,7 @@ function Main() {
     <StateContext.Provider value={state}>
       <DispatchContext.Provider value={dispatch}>
         <BrowserRouter>
-          <FlashMessages messages={flashMessages} />
+          <FlashMessages messages={state.flashMessages} />
           <Header loggedIn={loggedIn} />
           <Routes>
             <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
