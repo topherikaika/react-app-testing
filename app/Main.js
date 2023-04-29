@@ -52,6 +52,9 @@ function Main() {
       localStorage.setItem("complexAppUsername", state.user.username);
       localStorage.setItem("complexAppAvatar", state.user.avatar);
     } else {
+      localStorage.removeItem("complexAppToken", state.user.token);
+      localStorage.removeItem("complexAppUsername", state.user.username);
+      localStorage.removeItem("complexAppAvatar", state.user.avatar);
     }
   }, [state.loggedIn]);
   return (
