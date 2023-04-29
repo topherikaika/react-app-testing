@@ -24,18 +24,20 @@ function Main() {
     setFlashMessages(prev => prev.concat(msg));
   }
   return (
-    <BrowserRouter>
-      <FlashMessages messages={flashMessages} />
-      <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-      <Routes>
-        <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
-        <Route path="/post/:id" element={<ViewSinglePost />} />
-        <Route path="/create-post" element={<CreatePost addFlashMessage={addFlashMessage} />} />
-        <Route path="/about-us" element={<About />} />
-        <Route path="/terms" element={<Terms />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <ExampleContext.provider value={addFlashMessage}>
+      <BrowserRouter>
+        <FlashMessages messages={flashMessages} />
+        <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <Routes>
+          <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
+          <Route path="/post/:id" element={<ViewSinglePost />} />
+          <Route path="/create-post" element={<CreatePost />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/terms" element={<Terms />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </ExampleContext.provider>
   );
 }
 
