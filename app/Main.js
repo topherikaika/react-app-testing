@@ -17,6 +17,7 @@ import FlashMessages from "./components/FlashMessages.js";
 import ExampleContext from "./ExampleContext.js";
 
 function Main() {
+  const [state, dispatch] = useReducer();
   const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("complexAppToken")));
   const [flashMessages, setFlashMessages] = useState([]);
 
