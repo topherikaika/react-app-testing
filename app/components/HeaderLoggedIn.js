@@ -1,9 +1,11 @@
 import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import DispatchContext from "../DispatchContext";
+import StateContext from "../StateContext";
 
 function HeaderLoggedIn(props) {
   const appDispatch = useContext(DispatchContext);
+  const appState = useContext(StateContext);
 
   function handleLogout() {
     appDispatch({ type: "logout" });
