@@ -7,9 +7,6 @@ function HeaderLoggedIn(props) {
 
   function handleLogout() {
     appDispatch({ type: "logout" });
-    localStorage.removeItem("complexAppToken");
-    localStorage.removeItem("complexAppUsername");
-    localStorage.removeItem("complexAppAvatar");
   }
   return (
     <div className="flex-row my-3 my-md-0">
