@@ -33,27 +33,23 @@ function Main() {
   }
   const [state, dispatch] = useReducer(ourReducer, initialState);
 
-  const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("complexAppToken")));
-  const [flashMessages, setFlashMessages] = useState([]);
-
-  function addFlashMessage(msg) {
-    setFlashMessages(prev => prev.concat(msg));
-  }
   return (
-    <ExampleContext.Provider value={{ addFlashMessage, setLoggedIn }}>
-      <BrowserRouter>
-        <FlashMessages messages={flashMessages} />
-        <Header loggedIn={loggedIn} />
-        <Routes>
-          <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
-          <Route path="/post/:id" element={<ViewSinglePost />} />
-          <Route path="/create-post" element={<CreatePost />} />
-          <Route path="/about-us" element={<About />} />
-          <Route path="/terms" element={<Terms />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </ExampleContext.Provider>
+    <StateContext.Provider value={state}>
+      <DispatchContext.Provider value={dispatch}>
+        <BrowserRouter>
+          <FlashMessages messages={flashMessages} />
+          <Header loggedIn={loggedIn} />
+          <Routes>
+            <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
+            <Route path="/post/:id" element={<ViewSinglePost />} />
+            <Route path="/create-post" element={<CreatePost />} />
+            <Route path="/about-us" element={<About />} />
+            <Route path="/terms" element={<Terms />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </DispatchContext.Provider>
+    </StateContext.Provider>
   );
 }
 
