@@ -41,7 +41,7 @@ function Main() {
           <FlashMessages messages={state.flashMessages} />
           <Header />
           <Routes>
-            <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
+            <Route path="/" element={state.loggedIn ? <Home /> : <HomeGuest />} />
             <Route path="/post/:id" element={<ViewSinglePost />} />
             <Route path="/create-post" element={<CreatePost />} />
             <Route path="/about-us" element={<About />} />
