@@ -14,7 +14,7 @@ import LoadingDotsIcon from "./components/LoadingDotsIcon.js";
 import Header from "./components/Header.js";
 import HomeGuest from "./components/HomeGuest.js";
 import Footer from "./components/Footer.js";
-import About from "./components/about";
+import About from "./components/About";
 import Terms from "./components/Terms.js";
 import Home from "./components/Home.js";
 const CreatePost = React.lazy(() => import("./components/CreatePost"));
