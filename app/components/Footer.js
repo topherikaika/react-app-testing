@@ -3,23 +3,23 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer class="border-top text-center small text-muted py-3">
+    <footer className="border-top text-center small text-muted py-3">
       <p>
-        <Link to="/" class="mx-1">
+        <Link to="/" className="mx-1">
           Home
         </Link>{" "}
         |{" "}
-        <Link class="mx-1" to="/about-us">
+        <Link className="mx-1" to="/about-us">
           About Us
         </Link>{" "}
         |{" "}
-        <Link class="mx-1" to="/terms">
+        <Link className="mx-1" to="/terms">
           Terms
         </Link>
       </p>
-      <p class="m-0">
+      <p className="m-0">
         Copyright &copy; {new Date().getFullYear()}
-        <a href="/" class="text-muted">
+        <a href="/" className="text-muted">
           ComplexApp
         </a>
         . All rights reserved.
